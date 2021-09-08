@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-int main(int argc, char** argv) {
+int main() {
     double a, b, c;
     double sol1, sol2;
     printf("Write the coefficient of x^2: ");

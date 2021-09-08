@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 
-int main(int argc, char** argv) {
-    //approximate values of 1/3: a) 0.7 b) 0.67 c) 0.66667
+int main() {
+    //approximate values of 2/3: a) 0.7 b) 0.67 c) 0.66667
     double app[3] = { 0.7, 0.67, 0.66667 };
     double act_val = 2.0 / 3.0, app_val;
     double abs_err, rel_err, per_err;
