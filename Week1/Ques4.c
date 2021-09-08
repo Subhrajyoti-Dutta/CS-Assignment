@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-int fact(n) {
+int fact(int n) {
     int res = 1;
     for (int i = 1; i <= n; i++) {
         res *= i;
@@ -10,6 +10,19 @@ int fact(n) {
     return res;
 }
 
-int main() {
+double sine(double n) {
+    double res = 0;
+    for (int i = 0; i < 10; i++) {
+        res += pow(-1, i) * pow(n, 2 * i + 1) / fact(2 * i + 1);
+    }
+    return res;
+}
 
+int main() {
+    double angle;
+    printf("Enter the angle: ");
+    scanf("%lf", &angle);
+    double val = sine(angle);
+    printf("%lf", val);
+    return 0;
 }
