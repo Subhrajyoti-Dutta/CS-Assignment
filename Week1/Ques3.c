@@ -1,3 +1,7 @@
+//Name: Subhrajyoti Dutta
+//Roll No: 20220STA066
+//Sub: CS-103P
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -14,7 +18,7 @@ int main() {
     y = -(c1 * p2 - c2 * p1) / (p1 * q2 - p2 * q1);
 
     printf("Value of x is: %lf\n", x);
-    printf("Value of y is: %lf", y);
+    printf("Value of y is: %lf\n", y);
 
 
     return 0;
