@@ -27,6 +27,6 @@ int main() {
     printf("Enter the angle: ");
     scanf("%lf", &angle);
     double val = sine(angle);
-    printf("%lf\n", val);
+    printf("The value of sin(%lf) is: %lf\n", angle, val);
     return 0;
 }
