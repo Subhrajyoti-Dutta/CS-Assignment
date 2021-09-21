@@ -8,7 +8,7 @@ double f(double x) {
 }
 
 int main() {
-    double a, b, epsilon, c, fc;
+    double a, b, epsilon, c, fa, fb, fc;
 
     printf("Right hand Limit (a): ");
     scanf("%lf", &a);
@@ -17,21 +17,21 @@ int main() {
     printf("Limit of accuracy: ");
     scanf("%lf", &epsilon);
 
-    bool monotonic = (f(a) < f(b));
-
     int iter = 0;
-    while (fabs(a - b) > epsilon) {
+    while (fabs(fa - fb) > epsilon && fabs(a - b) > epsilon) {
         c = (a + b) / 2;
         fc = f(c);
         if (fc == 0) {
             iter++;
             break;
         }
-        else if (fc > 0 && monotonic || fc < 0 && !monotonic) {
+        else if (fc * fa < 0) {
             b = c;
+            fb = fc;
         }
         else {
             a = c;
+            fa = fc;
         }
         iter++;
     }
