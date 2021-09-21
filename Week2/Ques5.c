@@ -15,13 +15,15 @@ double df(double x) {
 }
 
 int main() {
-    double a, epsilon;
+    double a, a1, a2, epsilon;
 
-    printf("Starting Point: ");
-    scanf("%lf", &a);
+    printf("Starting Point 1: ");
+    scanf("%lf", &a1);
+    printf("Starting Point 2: ");
+    scanf("%lf", &a2);
     printf("Limit of accuracy: ");
     scanf("%lf", &epsilon);
-
+    a = (a1 + a2) / 2;
     double c = a, fa = f(a), fc = fa;
     do {
         a = c;
