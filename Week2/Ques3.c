@@ -17,13 +17,6 @@ int main() {
     printf("Limit of accuracy: ");
     scanf("%lf", &epsilon);
 
-    bool monotonic = (f(a) < f(b));
-    if (!monotonic) {
-        double t = a;
-        a = b;
-        b = t;
-    }
-
     fa = f(a);
     fb = f(b);
     while (true) {
@@ -32,12 +25,12 @@ int main() {
         if (fc == 0) {
             break;
         }
-        if (fabs(a - c) < epsilon) {
+        if (fabs(c - a) < epsilon) {
             break;
         }
         a = c;
         fa = fc;
     }
-    printf("The root of the function for the desired level of accuracy is: %lf\n", a);
+    printf("The root of the function for the desired level of accuracy is: %lf\n", c);
     return 0;
 }

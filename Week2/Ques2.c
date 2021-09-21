@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <stdbool.h>
 
 double cube_root(double x, double num) {
     return pow(x, 3.0) - num;                  //The function whose roots we have to find
