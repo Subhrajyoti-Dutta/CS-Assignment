@@ -1,3 +1,7 @@
+//Name: Subhrajyoti Dutta
+//Roll No: 20220STA066
+//Sub: CS-103P
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -25,6 +29,7 @@ int main() {
         c = a - fa / df(a);
         fc = f(c);
     } while (fc != 0 && fabs(fc - fa) > epsilon && fabs(c - a) > epsilon);
+
     printf("The root of the function for the desired level of accuracy is: %lf\n", c);
     return 0;
 }
