@@ -13,14 +13,15 @@ double f(double x) {
 
 int main() {
     double a, b, epsilon, c, fa, fb, fc;
-
+    printf("Eqn: x*exp(x) - 1 = 0\n\n");
     printf("Right hand Limit (a): ");
     scanf("%lf", &a);
     printf("Left hand Limit (b): ");
     scanf("%lf", &b);
     printf("Limit of accuracy: ");
     scanf("%lf", &epsilon);
-
+    fa = f(a);
+    fb = f(b);
     int iter = 0;
     while (fabs(fa - fb) > epsilon && fabs(a - b) > epsilon) {
         c = (a + b) / 2;
