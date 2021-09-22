@@ -20,7 +20,8 @@ int main() {
     scanf("%lf", &b);
     printf("Limit of accuracy: ");
     scanf("%lf", &epsilon);
-
+    fa = f(a);
+    fb = f(b);
     int iter = 0;
     while (fabs(fa - fb) > epsilon && fabs(a - b) > epsilon) {
         c = (a + b) / 2;
