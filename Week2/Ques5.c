@@ -17,6 +17,7 @@ double df(double x) {
 int main() {
     double a, a1, a2, epsilon;
 
+    printf("Eqn: x - cos(x) = 0\n\n");
     printf("Starting Point 1: ");
     scanf("%lf", &a1);
     printf("Starting Point 2: ");

@@ -13,7 +13,7 @@ double f(double x) {
 
 int main() {
     double a, b, epsilon, c, fa, fb, fc;
-
+    printf("Eqn: x*exp(x) - 1 = 0\n\n");
     printf("Right hand Limit (a): ");
     scanf("%lf", &a);
     printf("Left hand Limit (b): ");

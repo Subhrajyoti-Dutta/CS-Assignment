@@ -13,6 +13,7 @@ double f(double x) {
 int main() {
     double a, b, epsilon;
 
+    printf("Eqn: x - cos(x) = 0\n\n");
     printf("Starting Point 1: ");
     scanf("%lf", &a);
     printf("Starting Point 2: ");

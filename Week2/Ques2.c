@@ -14,6 +14,7 @@ int main() {
     double a, b, epsilon, num, c, fc;
     printf("Enter the number whose cube root we have to find: ");
     scanf("%lf", &num);
+    printf("Value to find: %g^(1/3)\n\n", num);
     printf("Right hand Limit (a): ");
     scanf("%lf", &a);
     printf("Left hand Limit (b): ");
