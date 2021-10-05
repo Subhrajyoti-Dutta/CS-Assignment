@@ -6,15 +6,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-void print(int n, double mat[n][n + 1]) {
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n + 1; j++) {
-			printf("%lf ", mat[i][j]);
-		}
-		printf("\n");
-	}
-}
-
 int main() {
 	int n = 3, i, j, k, l;
 	double  temp;
