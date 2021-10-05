@@ -33,12 +33,7 @@ int main() {
 	}
 
 	for (i = 0; i < n; i++) {
-		for (j = 0; j < i; j++) {
-			U[i][j] = 0;
-		}
-		for (j = i; j < n; j++) {
-			(j == i) ? (L[i][j] = 1) : (L[i][j] = 0);
-		}
+		L[i][i] = 1;
 	}
 
 	for (i = 0; i < n; i++) {
@@ -63,7 +58,7 @@ int main() {
 		}
 	}
 
-	printf("Original Matrix:\n");
+	printf("\nOriginal Matrix:\n");
 	print(n, n, A);
 	printf("\nL Matrix:\n");
 	print(n, n, L);
