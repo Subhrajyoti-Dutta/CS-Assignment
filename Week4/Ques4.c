@@ -32,24 +32,6 @@ void eye(int n, double Arr[n][n]) {
 	}
 }
 
-void printing(int n, int m, double Arr[n][m]) {
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < m; j++) {
-			printf("%lf ", Arr[i][j]);
-		}
-		printf("\n");
-	}
-	printf("\n");
-}
-
-void copyMat(int m, int n, double ori[m][n], double copy[m][n]) {
-	for (int i = 0; i < m; i++) {
-		for (int j = 0; j < n; j++) {
-			copy[i][j] = ori[i][j];
-		}
-	}
-}
-
 int main() {
 	int n, i, j, maxCorrX, maxCorrY;
 	double lambda, maxm, tanTwoTheta, theta;
@@ -103,11 +85,8 @@ int main() {
 		B0[maxCorrY][maxCorrX] = -sin(theta);
 		B0inv[maxCorrX][maxCorrY] = -sin(theta);
 		B0inv[maxCorrY][maxCorrX] = sin(theta);
-		double tempB[n][n];
 		matMul(n, n, n, B, B0, B);						//B = B X B0
-		double temparr[n][n];
 		matMul(n, n, n, B0, arr, arr);					//arr = B0 X arr
-		double temparr2[n][n];
 		matMul(n, n, n, arr, B0inv, arr);				//arr = arr X B0inv
 	}
 
