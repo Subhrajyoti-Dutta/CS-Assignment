@@ -20,7 +20,7 @@ int main() {
 
 	double X[n];							//initialised to zeros
 	double tempX[n];
-	int numOfIterations = 10;
+	int numOfIterations = 20;
 	for (int iter = 0; iter < numOfIterations; iter++) {
 		for (int i = 0; i < n; i++) {
 			tempX[i] = arr[i][n];
