@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-double simpOneThirdIntegral(double* X, double* Y, int num) {
+double simpThreeEighthIntegral(double* X, double* Y, int num) {
 	double h = *(X + 1) - *(X + 0);
 	double res = 0;
 	res += *Y;
@@ -39,7 +39,7 @@ int main() {
 		scanf("%lf", &arrY[i]);
 	}
 
-	double result = simpOneThirdIntegral(arrX, arrY, n);
-	printf("The integral result is: %lf\n", result);
+	double result = simpThreeEighthIntegral(arrX, arrY, n);
+	printf("The integral result using simson's 3/8th rule is: %lf\n", result);
 	return 0;
 }

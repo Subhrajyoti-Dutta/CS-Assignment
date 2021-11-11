@@ -15,7 +15,7 @@ int fact(int n) {
 	}
 }
 
-double forDiffDir(double* X, double* Y, int num, double varx) {
+double backDiffDir(double* X, double* Y, int num, double varx) {
 	double table[num][num + 1];
 	for (int i = 0; i < num; i++) {
 		table[i][0] = *(X + i);
@@ -63,7 +63,7 @@ int main() {
 	}
 	printf("Type the x coordinate of the point you want to predict: ");
 	scanf("%lf", &varX);
-	double result = forDiffDir(arrX, arrY, n, varX);
-	printf("The value of function at x = %lf is %lf\n", varX, result);
+	double result = backDiffDir(arrX, arrY, n, varX);
+	printf("The derivative of the function at x = %lf is %lf\n", varX, result);
 	return 0;
 }

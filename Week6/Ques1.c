@@ -64,6 +64,6 @@ int main() {
 	printf("Type the x coordinate of the point you want to predict: ");
 	scanf("%lf", &varX);
 	double result = forDiffDir(arrX, arrY, n, varX);
-	printf("The value of function at x = %lf is %lf\n", varX, result);
+	printf("The derivative of the function at x = %lf is %lf\n", varX, result);
 	return 0;
 }

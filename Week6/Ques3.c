@@ -33,6 +33,6 @@ int main() {
 		scanf("%lf", &arrY[i]);
 	}
 	double result = trapIntegral(arrX, arrY, n);
-	printf("The integral result is: %lf\n", result);
+	printf("The integral result using trapezoidal rule is: %lf\n", result);
 	return 0;
 }
