@@ -6,7 +6,16 @@
 #include <stdlib.h>
 #include <math.h>
 
-void backDiffTable(double* X, double* Y, int num) {
+int fact(int n) {
+	if (n <= 1) {
+		return 1;
+	}
+	else {
+		return n * fact(n - 1);
+	}
+}
+
+double forDiffDir(double* X, double* Y, int num, double varx) {
 	double table[num][num + 1];
 	for (int i = 0; i < num; i++) {
 		table[i][0] = *(X + i);
@@ -17,23 +26,24 @@ void backDiffTable(double* X, double* Y, int num) {
 			table[i][j] = (table[i + 1][j - 1] - table[i][j - 1]);
 		}
 	}
-	printf("\nThe Newton's Backward Difference Table is:\n");
-	printf("%10s %10s ", "x", "f(x)");
+	double h = *(X + 1) - *(X + 0);
+	double u = (varx - *(X + num - 1)) / h;
+	double res = 0, temp, temp2;
 	for (int i = 0; i < num - 1; i++) {
-		printf("%10s", "∇");
-		printf("%d ", i + 1);
-	}
-	printf("\n");
-	for (int i = 0; i < num; i++) {
-		for (int j = 0; j < 2; j++) {
-			printf("%10.4lf ", table[i][j]);
-		}
-		for (int j = 2; j < num + 1 - i; j++) {
-			printf("%10.4lf ", j - 1, i + j - 1, table[i][j]);
-		}
+		temp = 0;
 
-		printf("\n");
+		for (int j = 0; j < i + 1; j++) {
+			temp2 = 1;
+			for (int k = 0; k < i + 1; k++) {
+				if (k != j) {
+					temp2 *= (u + k);
+				}
+			}
+			temp += temp2;
+		}
+		res += temp * table[num - i - 2][i + 2] / fact(i + 1);
 	}
+	return res / h;
 }
 
 int main() {
@@ -42,6 +52,7 @@ int main() {
 	scanf("%d", &n);
 	double arrX[n];
 	double arrY[n];
+	double varX;
 	printf("Type the x coordinate of the points in order in space separated manner:\n");
 	for (int i = 0; i < n; i++) {
 		scanf("%lf", &arrX[i]);
@@ -50,6 +61,9 @@ int main() {
 	for (int i = 0; i < n; i++) {
 		scanf("%lf", &arrY[i]);
 	}
-	backDiffTable(arrX, arrY, n);
+	printf("Type the x coordinate of the point you want to predict: ");
+	scanf("%lf", &varX);
+	double result = forDiffDir(arrX, arrY, n, varX);
+	printf("The value of function at x = %lf is %lf\n", varX, result);
 	return 0;
 }
