@@ -17,9 +17,16 @@ void divDiffTable(double* X, double* Y, int num) {
 			table[i][j] = (table[i + 1][j - 1] - table[i][j - 1]) / (table[i + j - 1][0] - table[i][0]);
 		}
 	}
+	printf("\nThe Newton's Divided Difference Table is:\n");
+	printf("%10s %10s ", "x", "f(x)");
+	for (int i = 0; i < num - 1; i++) {
+		printf("%10s", "Δ");
+		printf("%d ", i + 1);
+	}
+	printf("\n");
 	for (int i = 0; i < num; i++) {
 		for (int j = 0; j < num + 1 - i; j++) {
-			printf("%lf ", table[i][j]);
+			printf("%10.4lf ", table[i][j]);
 		}
 		printf("\n");
 	}
@@ -40,4 +47,5 @@ int main() {
 		scanf("%lf", &arrY[i]);
 	}
 	divDiffTable(arrX, arrY, n);
+	return 0;
 }

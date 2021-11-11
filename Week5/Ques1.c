@@ -36,7 +36,7 @@ int main() {
 		scanf("%lf", &arrY[i]);
 	}
 	printf("Type the x coordinate of the point you want to predict: ");
-	scanf("%lf", varX);
+	scanf("%lf", &varX);
 	double varY;
 	varY = interpolate(arrX, arrY, n, varX);
 	printf("The y coordinate at x = %lf is %lf\n", varX, varY);
