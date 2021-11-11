@@ -23,7 +23,6 @@ int main() {
 	scanf("%d", &n);
 	double arrX[n];
 	double arrY[n];
-	double varX;
 	printf("Type the x coordinate of the points in order in space separated manner:\n");
 	for (int i = 0; i < n; i++) {
 		scanf("%lf", &arrX[i]);
