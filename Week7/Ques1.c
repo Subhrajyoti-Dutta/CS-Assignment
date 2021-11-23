@@ -58,6 +58,6 @@ int main() {
 		y = diffEqn(x, y, h, 2);
 		x += h;
 	}
-	printf("y(%lf) = %lf\n", x0, y);
+	printf("Using Taylor Series Method: y(%lf) = %lf\n", x0, y);
 	return 0;
 }
